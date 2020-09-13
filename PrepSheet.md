@@ -135,3 +135,58 @@ def reverseBits_1(self, n):
 
 </details>
 </details>
+
+<details>
+<summary>Linked Lists</summary>
+There really isn't much to talk about when it comes to Linked Lists. 
+See [Interview Notes](https://raw.githubusercontent.com/treygilliland/InterviewPrep/master/InterviewNotes.md) for more detail.
+
+* O(n) access and search  
+* O(1) insertion and deletion at tails
+* In LeetCode Questions, linked lists will be implemented using Node classes  
+* LinkedList can be just a pointer to head node or a LinkedList class wrapper to ensure no messy pointer update issues  
+* Python lists can be used as linked lists  
+* For more efficiency, python has collections.deque for implementation of doubly linked lists.  
+
+### Common Questions
+<details>
+    <summary>CTCI explanations</summary>
+Remove duplicates:  
+  * Use a HashMap as a temporary buffer  
+  * If no buffer is allowed, then use MergeSort and then remove duplicates from a sorted LL  
+  
+K'th to the last:  
+  * Go to the end, to find the length. (length - k) => number of elements to go through. Then, iterate again and return  
+  * Use a runner which is k places ahead. When the runner reaches the end, your main pointer will be k'th to the last  
+  
+Deleting a node:  
+  * Go until you find it, and skip: O(n)  
+  
+Partition around a value:  
+  * Use a runner to get to the value that you need to partition around. Then add one from the head, and one from the runner, alternatively  
+  
+Intersection/Loop Detection:  
+  * If you can use C/C++, just use pointers  
+  * If not, you can still check the reference by == for objects
+</details>
+<details>
+    <summary>Top 75 Problems</summary>
+    
+Reverse a Linked List - https://leetcode.com/problems/reverse-linked-list/
+
+Detect Cycle in a Linked List - https://leetcode.com/problems/linked-list-cycle/  
+* see more on cycle detection [here](https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare)
+
+Merge Two Sorted Lists - https://leetcode.com/problems/merge-two-sorted-lists/  
+
+Merge K Sorted Lists - https://leetcode.com/problems/merge-k-sorted-lists/  
+* can be done similar to two sorted lists or using merge sort or using priority queue to determine next node
+
+Remove Nth Node From End Of List - https://leetcode.com/problems/remove-nth-node-from-end-of-list/  
+* done using two pointers n-distance apart, remove on slow pointer
+
+Reorder List - https://leetcode.com/problems/reorder-list/  
+* use fast/slow pointer to split the lists
+* reverse the second half
+* merge the two lists
+</details>
